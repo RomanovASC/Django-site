@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+
+    {{ form.title.label_tag }}
+    {{ form.title }}
+    <br>
+    {{ form.body.label_tag }}
+    {{ form.body }}
+    <br>
+    {{ form.status.label_tag }}
+    {{ form.status }}
+    <br>
+    {{ form.image.label_tag }}
+    {{ form.image }}
+    <br>
+    {{ form.tags.label_tag }}
+    {{ form.tags }}
+    <br>
+    <button type="submit">Create Post</button>
+</form>
+{% endblock %}

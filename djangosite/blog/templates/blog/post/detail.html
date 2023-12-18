@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p class="date">
+    Published {{ post.publish }} by {{ post.author }}
+</p>
+<p class="blog">
+    Blog:
+        {% for tag in tags %}
+            {{ tag }}
+        {% endfor %}
+</p>
+{{ post.body|linebreaks }}
+    {% if post.image %}
+    <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.image.url }}">
+    {% endif %}
+    {% if post.author == request.user %}
+        <a href="edit_post">Edit Post</a>
+    {% endif %}
+{% endblock %}

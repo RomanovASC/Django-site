@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>All Blogs</h1>
+    <ul>
+        {% for tag in tags %}
+            <li><a href="{% url 'blog:posts_by_blog' tag.tag_name %}">{{ tag.tag_name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
